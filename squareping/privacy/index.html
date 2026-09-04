@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Square Ping</title>
+  <meta name="description" content="Privacy Policy for Square Ping, a personal NCAA tournament squares tracker by MDR Ventures." />
+  <link rel="canonical" href="https://www.mdrventure.com/squareping/privacy/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Instrument+Serif&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="mark" href="/">MDR</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/squareping/support/">Support</a></li>
+        <li><a href="mailto:info@mdrventure.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap page-hero">
+      <p class="crumb"><a href="/">MDR Ventures</a> / Square Ping / Privacy</p>
+      <p class="eyebrow">Square Ping</p>
+      <h1>Privacy Policy</h1>
+      <p class="dek">How the Square Ping app handles data on your device and, when you enable background alerts, on our Firebase backend.</p>
+    </section>
+
+    <article class="wrap prose">
+      <p class="meta">Last updated: September 3, 2026 · Bundle ID <strong>com.squareping.app</strong> · Operator: MDR Ventures</p>
+
+      <h2>What Square Ping is</h2>
+      <p>Square Ping is a <strong>personal tracker</strong> for NCAA tournament (March Madness) box-pool squares you already own. You record your squares, set your own payout estimates, and see when public scores match your digits.</p>
+      <p>Square Ping does <strong>not</strong> accept wagers, process payments, run pools, sell tickets, or connect you with other players. It is not a gambling service. Dollar amounts in the app are estimates you configure for your own records.</p>
+
+      <h2>Data on your device</h2>
+      <p>Pool names, squares, payout estimates, hit history, alert dedup keys, disclaimer acknowledgment, and backup export JSON are stored <strong>locally on your device</strong> (for example via SharedPreferences). You can export or import a JSON backup, or clear all local data, from Settings.</p>
+
+      <h2>Network use</h2>
+      <p>While score checking is enabled and the app is open, Square Ping fetches public men’s college basketball scores from ESPN’s public scoreboard. That feed may be delayed or incomplete. We do not control ESPN’s service.</p>
+
+      <h2>Background alerts and cloud sync (optional)</h2>
+      <p>If you turn on <strong>Enable background alerts</strong> in Settings, Square Ping uses Google Firebase so we can notify you when a square hits while the app is closed. In that case we may process:</p>
+      <ul>
+        <li>An anonymous installation ID created on the device</li>
+        <li>A Firebase Cloud Messaging (FCM) / APNs device push token</li>
+        <li>Anonymous Firebase Authentication (no email or password)</li>
+        <li>Synced copies of your pools, squares, and payout settings needed to match scores</li>
+        <li>Server-side keys that prevent duplicate push alerts</li>
+      </ul>
+      <p>That data is stored in Google Cloud / Firebase for project <strong>square-ping</strong>, operated by MDR Ventures. We use it only to deliver the alerts you requested and to keep your board in sync for matching. We do not sell it, use it for advertising, or share it with third parties for their marketing.</p>
+      <p>If you leave background alerts off, the app continues to work as a local tracker with foreground score checks only.</p>
+
+      <h2>What we do not collect</h2>
+      <ul>
+        <li>Account name, email, or phone number through the app (contact us by email if you choose)</li>
+        <li>Payment card or banking details</li>
+        <li>Precise location</li>
+        <li>Contacts, photos, or microphone</li>
+        <li>Advertising IDs for ad targeting</li>
+      </ul>
+
+      <h2>Children</h2>
+      <p>Square Ping is not directed at children under 13. We do not knowingly collect personal information from children under 13.</p>
+
+      <h2>Retention and deletion</h2>
+      <p>Local data remains until you clear it or uninstall the app. If you used background alerts, you can turn the switch off and clear local data in Settings. To request deletion of server-side installation or pool records associated with your install, email us at the address below with your approximate install date and platform (iOS or Android). We will delete or de-identify that backend data within a reasonable period.</p>
+
+      <h2>Third-party services</h2>
+      <ul>
+        <li><strong>ESPN public scoreboard</strong> — score data while the app checks scores</li>
+        <li><strong>Google Firebase</strong> (Auth, Cloud Firestore, Cloud Messaging, Cloud Functions) — only when background alerts / sync are enabled</li>
+        <li><strong>Apple / Google</strong> — standard OS notification and app distribution services</li>
+      </ul>
+      <p>Those providers process data under their own terms and privacy policies when you use their services.</p>
+
+      <h2>Changes</h2>
+      <p>We may update this policy as Square Ping evolves. The “Last updated” date at the top will change when we do. Material changes will be reflected on this page before they apply to new app versions.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about privacy for Square Ping:</p>
+      <p><a href="mailto:info@mdrventure.com">info@mdrventure.com</a><br />
+      MDR Ventures · mdrventure.com</p>
+      <p>Also see <a href="/squareping/support/">Square Ping Support</a>.</p>
+    </article>
+  </main>
+
+  <footer class="wrap foot">
+    <p>© 2026 MDR Ventures</p>
+    <p>mdrventure.com</p>
+  </footer>
+</body>
+</html>

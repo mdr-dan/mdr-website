@@ -32,20 +32,21 @@
     </section>
 
     <article class="wrap prose">
-      <p class="meta">Last updated: November 21, 2026 · Bundle ID <strong>com.squareping.app</strong> · Operator: MDR Ventures</p>
+      <p class="meta">Last updated: November 21, 2026 · Bundle ID <strong>com.squareping.app</strong> · Operator: MDR Ventures LLC</p>
 
       <h2>What Square Ping is</h2>
-      <p>Square Ping is a <strong>personal tracker</strong> for NCAA tournament (March Madness) box-pool squares you already own. You record your squares, set your own payout estimates, and see when public scores match your digits.</p>
-      <p>Square Ping does <strong>not</strong> accept wagers, process payments, run pools, sell tickets, or connect you with other players. It is not a gambling service. Dollar amounts in the app are estimates you configure for your own records.</p>
+      <p>Square Ping is a personal tracker for NCAA tournament (March Madness) box-pool squares you already own. You record your squares, set your own payout estimates, and see when public scores match your digits.</p>
+      <p>Square Ping does not accept wagers, process payments, run pools, sell tickets, or connect you with other players. It is not a gambling service. Dollar amounts in the app are estimates you configure for your own records. Use of the app is also governed by our <a href="/squareping/terms/">Terms of Use</a>.</p>
 
       <h2>Data on your device</h2>
-      <p>Pool names, squares, payout estimates, hit history, alert dedup keys, disclaimer acknowledgment, and backup export JSON are stored <strong>locally on your device</strong> (app preferences / local storage on iOS and Android). You can export or import a JSON backup, or clear all local data, from Settings.</p>
+      <p>Pool names, squares, payout estimates, hit history, alert dedup keys, disclaimer acknowledgment, and backup export JSON are stored locally on your device (app preferences / local storage on iOS and Android). You can export or import a JSON backup, or clear all local data, from Settings.</p>
+      <p>Square Ping does not include crash-reporting, performance-monitoring, or analytics tools, and Google Analytics is disabled.</p>
 
       <h2>Network use</h2>
-      <p>While score checking is enabled and the app is open, Square Ping fetches public men’s college basketball scores from ESPN’s public scoreboard. That feed may be delayed or incomplete. We do not control ESPN’s service.</p>
+      <p>While score checking is enabled and the app is open, Square Ping fetches public men&#x27;s college basketball scores from ESPN&#x27;s public scoreboard. Your device connects directly to ESPN&#x27;s servers, so ESPN can see your IP address and basic request information (such as device and app type), under ESPN&#x27;s own privacy policy. We don&#x27;t send ESPN your pools, squares, or any identifier. That feed may be delayed or incomplete. We do not control ESPN&#x27;s service.</p>
 
       <h2>Background alerts (optional)</h2>
-      <p>Square Ping works as a local tracker without sending your pools anywhere. With <strong>Enable background alerts</strong> off (the default), the app sends nothing to our servers: it does not sign in to Firebase, does not use Firebase App Check, and does not register a push token (automatic push registration is disabled).</p>
+      <p>Square Ping works as a local tracker without sending your pools anywhere. With Enable background alerts off (the default), the app sends nothing to our servers: it does not sign in to Firebase, does not use Firebase App Check, and does not register a push token (automatic push registration is disabled). Even with alerts off, your device still connects directly to Google AdMob to show ads and to ESPN to fetch scores, as described in Advertising and Network use.</p>
       <p>If you turn on background alerts in Settings, Square Ping uses Google Firebase so our server can notify you when a square hits while the app is closed. While alerts are on, we process:</p>
       <ul>
         <li>An anonymous installation ID created on the device (shown in Settings)</li>
@@ -54,11 +55,12 @@
         <li>Synced copies of your pools, squares, and payout settings needed to match scores</li>
         <li>Server-side keys that prevent duplicate push alerts</li>
       </ul>
-      <p>That data is stored in Google Cloud / Firebase (Cloud Firestore) for project <strong>square-ping</strong>, operated by MDR Ventures, with Google Firebase acting as our service provider. We use it only to send the alerts you asked for. We do not sell it, use it for advertising, or share it with third parties for their marketing.</p>
+      <p>That data is stored in Google Cloud / Firebase (Cloud Firestore and Cloud Functions) for project square-ping, operated by MDR Ventures LLC, with Google Firebase acting as our service provider. We use it only to send the alerts you asked for. We do not sell this alert data, use it for advertising, or share it with third parties for their marketing. (Ads are handled separately by Google AdMob, as described in Advertising.)</p>
+      <p>Our Cloud Functions write short-lived technical logs that include your Install ID, used for troubleshooting. These logs are deleted automatically after about 30 days.</p>
 
       <h2 id="turning-alerts-off">Turning alerts off and deleting data</h2>
-      <p>When you turn background alerts off, or use Settings → <strong>Clear all local data</strong>, the app deletes your install record, its synced pools, and your push token from our servers. If your device is offline, the deletion is retried the next time the app is online. Alert history kept on the server to prevent duplicate notifications is removed by an automatic cleanup that runs hourly, so your server-side data is gone within about an hour.</p>
-      <p>Settings shows your <strong>Install ID</strong> with a copy button. If you reinstalled the app or no longer have access to the device, email <a href="mailto:info@mdrventure.com">info@mdrventure.com</a> with that Install ID and we will delete the associated server-side records.</p>
+      <p>When you turn background alerts off, or use Settings → Clear all local data, the app deletes your install record, its synced pools, and your push token from our servers, usually within about an hour. If your device is offline, the deletion is retried the next time the app is online. Alert history kept on the server to prevent duplicate notifications is removed by an automatic cleanup that runs hourly, so your server-side alert data is gone within about an hour. Technical logs containing your Install ID expire after about 30 days.</p>
+      <p>Settings shows your Install ID with a copy button. If you reinstalled the app or no longer have access to the device, email <a href="mailto:info@mdrventure.com">info@mdrventure.com</a> with that Install ID and we will delete the associated server-side records.</p>
 
       <h2>Advertising</h2>
       <p>Square Ping is free and shows Google AdMob banner ads. Google and its advertising partners may collect or infer:</p>
@@ -67,48 +69,76 @@
         <li>Device and usage information, such as device type, app activity, and ad interactions</li>
         <li>Approximate (coarse) location inferred from IP address, not from GPS or precise location</li>
       </ul>
-      <p>Google uses this information to deliver and measure ads, to limit how often you see the same ad, and — where permitted — to personalize ads and produce advertising analytics. We do not link that data to your identity or to your pools. We do not sell your information, other than what ad personalization may imply under US state privacy laws.</p>
-      <p>In the European Economic Area and the United Kingdom, Google’s consent form appears so you can choose Consent, Manage options, or Do not consent before personalized ads are served. In applicable US states, a similar form lets you opt out of the sale or sharing of personal information for advertising. On iOS, Apple’s App Tracking Transparency prompt asks whether Square Ping may track you across apps and websites. If iOS Settings → Privacy &amp; Security → Tracking → Allow Apps to Request to Track is turned off, that prompt does not appear and tracking is treated as denied.</p>
+      <p>Google receives this information directly from your device, whether or not background alerts are on. Google uses it to deliver and measure ads, to limit how often you see the same ad, and — where permitted — to personalize ads and produce advertising analytics. We do not link that data to your identity or to your pools. We have blocked gambling and betting ad categories in AdMob.</p>
+      <p>We do not sell your information for money. However, when personalized ads are shown, Google&#x27;s collection of your advertising identifier and ad activity may be considered &quot;targeted advertising,&quot; &quot;sale,&quot; or &quot;sharing&quot; under some US state privacy laws. See Your US state privacy rights below for how to opt out.</p>
+      <p>In the European Economic Area and the United Kingdom, Google&#x27;s consent form appears so you can choose Consent, Manage options, or Do not consent before personalized ads are served. In applicable US states, a similar form lets you opt out of the sale or sharing of personal information for advertising. On iOS, Apple&#x27;s App Tracking Transparency prompt asks whether Square Ping may track you across apps and websites. If iOS Settings → Privacy &amp; Security → Tracking → Allow Apps to Request to Track is turned off, that prompt does not appear and tracking is treated as denied.</p>
       <p>You can change these choices later:</p>
       <ul>
-        <li>In the app, open Settings → <strong>Privacy options</strong> (shown when Google’s consent tools require an entry point) to review or update ad consent</li>
+        <li>In the app, open Settings → Privacy options (shown when Google&#x27;s consent tools require an entry point) to review or update ad consent</li>
         <li>On iOS, Settings → Privacy &amp; Security → Tracking</li>
-        <li>On Android, your device’s advertising or ads-personalization settings (for example Settings → Google → Ads)</li>
+        <li>On Android, open your device&#x27;s ads settings (for example Settings → Privacy → Ads, or Settings → Google → Ads) and choose Delete advertising ID (Android 12 and later) or Reset advertising ID. Deleting the ID stops apps from using it for personalized ads.</li>
       </ul>
+      <p>Learn more about how Google uses data: <a href="https://policies.google.com/privacy">Google Privacy Policy</a> · <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a> · <a href="https://firebase.google.com/support/privacy">Firebase privacy and security</a>.</p>
 
-      <h2>What we don’t collect</h2>
+      <h2>What we don&#x27;t collect</h2>
       <ul>
         <li>Account name, email, or phone number through the app (contact us by email if you choose)</li>
         <li>Payment card or banking details</li>
         <li>Precise (GPS) location — Square Ping does not request device location permission. Google AdMob may infer approximate location from IP address, as described in Advertising</li>
         <li>Your time zone</li>
         <li>Contacts, photos, or microphone</li>
+        <li>Crash reports, performance metrics, or app analytics</li>
         <li>Pool or alert data on our servers while background alerts are off</li>
       </ul>
 
+      <h2>If you contact us</h2>
+      <p>If you email us, we use your email address and message only to respond to you and handle your request. We keep support emails for about 30 days after your request is resolved, unless we need them longer to comply with the law or complete a deletion or privacy request.</p>
+
       <h2>Children</h2>
-      <p>Square Ping is not directed at children under 13. We do not knowingly collect personal information from children under 13.</p>
+      <p>Square Ping is not directed at children under 13, and the app does not ask for age. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has given us personal information, email <a href="mailto:info@mdrventure.com">info@mdrventure.com</a> and we will delete it.</p>
 
       <h2>Retention and deletion</h2>
-      <p>Local data remains on your device until you clear it in Settings or uninstall the app. Server-side alert data exists only while background alerts are on and is deleted as described in <a href="#turning-alerts-off">Turning alerts off and deleting data</a>. For any other deletion request, email us at the address below and include your Install ID from Settings.</p>
+      <p>Local data remains on your device until you clear it in Settings or uninstall the app. Server-side alert data exists only while background alerts are on and is deleted as described in <a href="#turning-alerts-off">Turning alerts off and deleting data</a>. Server logs and support emails are kept for about 30 days. For any other deletion request, email us at the address below and include your Install ID from Settings.</p>
+
+      <h2>Security</h2>
+      <p>Data synced for background alerts travels over encrypted connections (HTTPS/TLS) and is stored in Google Cloud, which encrypts data at rest. Access is restricted by Firebase security rules, Firebase App Check, and anonymous authentication. Data stored on your device is protected by your device&#x27;s own security, so keep your device locked and up to date. No method of transmission or storage is completely secure, but we work to protect the limited data we handle.</p>
+
+      <h2>Your US state privacy rights</h2>
+      <p>Depending on where you live — including Virginia (Virginia Consumer Data Protection Act) and California (CCPA, as amended by the CPRA) — you may have the right to:</p>
+      <ul>
+        <li>Know whether we process your personal information, and access it</li>
+        <li>Correct inaccurate personal information</li>
+        <li>Delete personal information</li>
+        <li>Get a copy of your personal information in a portable format</li>
+        <li>Opt out of targeted advertising, the &quot;sale&quot; of personal information, and the &quot;sharing&quot; of personal information for cross-context behavioral advertising</li>
+      </ul>
+      <p><strong>Categories we handle (California disclosure).</strong> In the past 12 months, the app has involved: identifiers (Install ID, push token, advertising identifier, IP address — the last two received by Google and, for IP, ESPN); internet or device activity (ad interactions and app activity collected by Google AdMob); and approximate location inferred from IP address (by Google AdMob). We do not collect sensitive personal information. Advertising identifiers and ad activity may be disclosed to Google for personalized advertising, which may be a &quot;sale&quot; or &quot;sharing&quot; under California law. We do not knowingly sell or share personal information of consumers under 16.</p>
+      <p><strong>How to opt out of targeted advertising, sale, or sharing.</strong> Use Settings → Privacy options in the app; on iOS, deny or turn off tracking (Settings → Privacy &amp; Security → Tracking); on Android, delete or reset your advertising ID as described in Advertising.</p>
+      <p><strong>How to make other requests.</strong> Email <a href="mailto:info@mdrventure.com">info@mdrventure.com</a>. If background alerts are or were on, include your Install ID from Settings so we can find your records. Because Square Ping does not collect names, emails, or accounts in the app, we may only be able to act on data tied to an Install ID; advertising data is held by Google and controlled through the settings above. We will respond within 45 days. You may use an authorized agent where the law allows; we may ask for proof of authorization. We will not discriminate against you for exercising your rights.</p>
+      <p><strong>Appeals (Virginia and similar states).</strong> If we decline to act on your request, you may appeal by replying to our decision or emailing <a href="mailto:info@mdrventure.com">info@mdrventure.com</a> with the subject &quot;Privacy appeal.&quot; We will respond to your appeal within 60 days and explain our decision. If you are not satisfied, you may contact the Virginia Office of the Attorney General (<a href="https://www.oag.state.va.us/">https://www.oag.state.va.us/</a>) or your state&#x27;s attorney general.</p>
+
+      <h2>International users</h2>
+      <p>Square Ping is operated from the United States. If you use it from another country, your information is processed in the United States and other countries where Google and ESPN operate, which may have different data protection laws than yours. If you are in the European Economic Area or the United Kingdom, we rely on your consent for personalized ads (collected through Google&#x27;s consent form), and on your request and our legitimate interest for providing background alerts. You may have the right to access, correct, delete, restrict, or object to processing of your personal information, to withdraw consent at any time, and to complain to your local data protection authority. Contact us at the address below to exercise these rights.</p>
 
       <h2>Third-party services</h2>
       <ul>
-        <li><strong>ESPN public scoreboard</strong> — score data while the app checks scores</li>
-        <li><strong>Google Firebase</strong> (Auth, App Check, Cloud Firestore, Cloud Messaging, Cloud Functions) — only while background alerts are enabled</li>
-        <li><strong>Google AdMob</strong> — banner ads. See <a href="https://policies.google.com/technologies/partner-sites">how Google uses data from partners</a></li>
-        <li><strong>Apple / Google</strong> — standard OS notification and app distribution services</li>
+        <li>ESPN public scoreboard — score data while the app checks scores (ESPN sees your IP address)</li>
+        <li>Google Firebase (Auth, App Check, Cloud Firestore, Cloud Messaging, Cloud Functions) — only while background alerts are enabled. See <a href="https://firebase.google.com/support/privacy">Firebase privacy and security</a></li>
+        <li>Google AdMob — banner ads. See <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
+        <li>Apple / Google — standard OS notification and app distribution services</li>
       </ul>
       <p>Those providers process data under their own terms and privacy policies when you use their services.</p>
 
       <h2>Changes</h2>
-      <p>We may update this policy as Square Ping evolves. The “Last updated” date at the top will change when we do. Material changes will be reflected on this page before they apply to new app versions.</p>
+      <p>We may update this policy as Square Ping evolves. The &quot;Last updated&quot; date at the top will change when we do. Material changes will be reflected on this page before they apply to new app versions, and we may also notify you in the app.</p>
 
       <h2>Contact</h2>
       <p>Questions about privacy for Square Ping:</p>
-      <p><a href="mailto:info@mdrventure.com">info@mdrventure.com</a><br />
-      MDR Ventures · mdrventure.com</p>
-      <p>Also see <a href="/squareping/support/">Square Ping Support</a> and <a href="/squareping/terms/">Terms of Use</a>.</p>
+      <p>MDR Ventures LLC<br />
+      8401 Mayland Dr, Ste A<br />
+      Richmond, VA 23294<br />
+      <a href="mailto:info@mdrventure.com">info@mdrventure.com</a> · <a href="/">mdrventure.com</a></p>
+      <p>Also see <a href="/squareping/support/">Square Ping Support</a> and our <a href="/squareping/terms/">Terms of Use</a>.</p>
     </article>
   </main>
 
